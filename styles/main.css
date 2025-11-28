@@ -1,16 +1,41 @@
-/* COLORES PRINCIPALES - Aquí se cambian los colores */
+/* COLORES PRINCIPALES - Modo claro y oscuro */
 :root {
-    --primary-color: #2563eb; /* Azul principal */
-    --secondary-color: #7c3aed; /* Morado */
+    /* Modo claro (default) */
+    --primary-color: #2563eb;
+    --secondary-color: #7c3aed;
     --accent-color: #dc2626;
     --dark-color: #1e293b;
     --light-color: #f8fafc;
     --gray-color: #64748b;
     --light-gray: #e2e8f0;
+    --background-color: #ffffff;
+    --surface-color: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    
+    /* Constantes */
     --font-main: 'Segoe UI', system-ui, sans-serif;
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+}
+
+/* Modo oscuro */
+[data-theme="dark"] {
+    --primary-color: #3b82f6;
+    --secondary-color: #8b5cf6;
+    --accent-color: #ef4444;
+    --dark-color: #f1f5f9;
+    --light-color: #0f172a;
+    --gray-color: #94a3b8;
+    --light-gray: #1e293b;
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -26,8 +51,34 @@ html {
 body {
     font-family: var(--font-main);
     line-height: 1.6;
-    color: var(--dark-color);
-    background-color: var(--light-color);
+    color: var(--text-primary);
+    background-color: var(--background-color);
+    transition: var(--transition);
+}
+
+/* Botón de toggle modo oscuro */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
 
 .container {
@@ -39,7 +90,7 @@ body {
 
 /* MENÚ SUPERIOR - Se queda fijo al hacer scroll */
 .header {
-    background-color: white;
+    background-color: var(--surface-color);
     box-shadow: var(--box-shadow);
     position: fixed;
     width: 100%;
@@ -70,7 +121,7 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--dark-color);
+    color: var(--text-primary);
     font-weight: 500;
     transition: var(--transition);
 }
@@ -209,12 +260,12 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
-    color: var(--dark-color);
+    color: var(--text-primary);
 }
 
 /* Sobre Mí */
 .about {
-    background-color: white;
+    background-color: var(--surface-color);
 }
 
 .about-text p {
@@ -238,7 +289,8 @@ section {
 }
 
 .skill-category {
-    background-color: white;
+    background-color: var(--surface-color);
+    color: var(--text-primary);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -279,7 +331,8 @@ section {
 }
 
 .project-card {
-    background-color: white;
+    background-color: var(--surface-color);
+    color: var(--text-primary);
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
@@ -356,7 +409,7 @@ section {
 
 /* Contacto */
 .contact {
-    background-color: white;
+    background-color: var(--surface-color);
 }
 
 .contact-content {
@@ -368,6 +421,7 @@ section {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.1rem;
+    color: var(--text-primary);
 }
 
 .contact-methods {
@@ -384,6 +438,7 @@ section {
     background-color: var(--light-gray);
     border-radius: var(--border-radius);
     transition: var(--transition);
+    color: var(--text-primary);
 }
 
 .contact-method:hover {
@@ -415,7 +470,7 @@ section {
 /* Footer */
 .footer {
     background-color: var(--dark-color);
-    color: white;
+    color: var(--light-color);
     padding: 2rem 0;
     text-align: center;
 }
@@ -453,7 +508,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background-color: var(--surface-color);
         width: 100%;
         text-align: center;
         transition: var(--transition);
@@ -559,7 +614,7 @@ section {
 .repositories-section h3 {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--dark-color);
+    color: var(--text-primary);
     font-size: 1.8rem;
 }
 
@@ -576,10 +631,10 @@ section {
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    background-color: white;
+    background-color: var(--surface-color);
     border-radius: var(--border-radius);
     text-decoration: none;
-    color: var(--dark-color);
+    color: var(--text-primary);
     box-shadow: var(--box-shadow);
     transition: var(--transition);
     border: 2px solid transparent;
@@ -604,7 +659,7 @@ section {
 }
 
 .repo-card p {
-    color: var(--gray-color);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin: 0;
 }
