@@ -1,6 +1,7 @@
+/* COLORES PRINCIPALES - Aquí se cambian los colores */
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #7c3aed;
+    --primary-color: #2563eb; /* Azul principal */
+    --secondary-color: #7c3aed; /* Morado */
     --accent-color: #dc2626;
     --dark-color: #1e293b;
     --light-color: #f8fafc;
@@ -36,7 +37,7 @@ body {
     padding: 0 15px;
 }
 
-/* Header */
+/* MENÚ SUPERIOR - Se queda fijo al hacer scroll */
 .header {
     background-color: white;
     box-shadow: var(--box-shadow);
@@ -92,7 +93,7 @@ body {
     transition: var(--transition);
 }
 
-/* Hero Section */
+/* SECCIÓN PRINCIPAL - Fondo con degradado */
 .hero {
     padding: 120px 0 80px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -285,6 +286,7 @@ section {
     transition: var(--transition);
 }
 
+/* TARJETAS DE PROYECTOS - Efecto al pasar mouse */
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);

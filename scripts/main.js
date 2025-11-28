@@ -1,3 +1,7 @@
+// MENÚ MÓVIL - Abre/cierra en celulares
+// ANIMACIONES - Las secciones aparecen suavemente
+// OBSERVER - Detecta cuando las secciones son visibles
+
 // Menú hamburguesa para dispositivos móviles
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
